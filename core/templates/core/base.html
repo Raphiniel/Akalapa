@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZALIPHA | {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- person icon below and cart above -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <link rel="shortcut icon" href="{% static 'GREENMART.png' %}">
+        <script src="{% static 'zali.js' %}" async></script>
+</head>
+<body>
+    <nav>
+        <div class="logoname">
+            <a href="{% url 'index' %}" class="logo">ZAL<span class="ipha">IPHA</span></a>
+        </div>
+        <div class="navitems">
+            </a>
+            <a  href="" class="login">
+                <span class="material-symbols-outlined">
+                    person
+                </span>
+            </a>
+            <a href="{% url 'cart' %}" id="carti">
+                <span class="material-symbols-outlined">
+                    shopping_cart_checkout
+                </span>
+        </div>
+    </nav>
+    <br>
+    <!-- <header>
+        <hr>
+        We are your helpers
+    </header> -->
+    {% block content %}
+    {% endblock %}
+   
+</body>
+<footer>
+    <div class="footleft">
+        <h2><u>About</u></h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum nulla eos in ipsam velit, doloribus nobis officiis quaerat provident consequatur sequi incidunt excepturi fuga, natus est reiciendis? Laboriosam, labore rerum.
+        </p>
+    </div>
+    <div class="footright">
+        <ul>
+            <li><a href="{% url 'newitem' %}">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms Of Use</a></li>
+            <li><a href="{% url 'message' %}">Contact Us</a></li>
+            <li><a href="#">FAQ</a></li>
+        </ul>
+    </div>
+</footer>
+<script src="{% static 'zali.js' %}" async></script>
+</html>

@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+{% block title %} Newitem {% endblock %}
+
+{% block content %}
+<center>
+    <h1>Add new item to database</h1>
+    <br>
+    {% if submitted %}
+    New product added
+    {% else %}
+    <form action="." method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+        <input type="submit" value="submit">
+        <br>
+    </form>
+    {% endif %}
+</center>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+{% block title %} {% endblock %}
+
+{% block content %}
+<center>
+    <h1>Message Form</h1>
+    {% if form.is_valid %}
+    Well Done
+    {% else %}
+    <form action="." method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" name="submit">
+</form>
+{% endif %}
+</center>
+{% endblock %}

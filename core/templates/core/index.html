@@ -1,0 +1,53 @@
+{% extends 'core/base.html' %}
+{% block title %} {% endblock %}
+
+{% block content %}
+<hr>
+<marquee behavior="alternate" direction="right">Welcome</marquee>
+<hr>
+<br>
+<div class="container">
+    <div class="lefthand">
+        <h1> Categories</h1>
+        <ul>
+            <li><a href="">Stuff</a></li>
+            <li><a href="">Stuff</a></li>
+            <li><a href="">Stuff</a></li>
+            <li><a href="">Stuff</a></li>
+            <li><a href="">Stuff</a></li>
+            <li><a href="">Stuff</a></li>
+            <li><a href="">Stuff</a></li>
+            <li><a href="">Stuff</a></li>
+            <li><a href="">Stuff</a></li>
+        </ul>
+    </div>
+    <div class="righthand">
+        <br>
+        <div class="searchitem">
+            <input class="searchbox" placeholder="Mazoe, Soap, Cereals, Chargers" type="text">
+            <button class="searchbutton">Search</button>
+        </div>
+        <hr>
+        <div class="griditems">
+            {% for item in products %}
+            <div class="indigrid" id="{{item.id}}">
+                <div class="image">
+                    <img width="325px" height="210px" src="{{item.image.url}}" alt="">
+                </div>
+                <hr>
+                <div class="zita">
+                    <h5>Name:{{item.pname}}</h5> 
+                    <hr>
+                    <h5>Price:${{item.price}}</h5>
+                    <hr>
+                </div>
+                <div class="battani">
+                    <button class="view">View</button>
+                    <button  class="add update-cart" id="addtocart">Add to Cart</button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
